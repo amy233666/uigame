@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameShare</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#8E6FF7',secondary:'#FF4D8F'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .search-input:focus {
+            outline: none;
+        }
+        .tab-active {
+            position: relative;
+        }
+        .tab-active::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #8E6FF7;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-[#121212] text-white">
+    <!-- Nav Bar -->
+    <nav class="fixed w-full top-0 bg-[#1A1A1A] z-50 px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+            <span class="font-['Pacifico'] text-xl text-primary">logo</span>
+        </div>
+        <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 flex items-center justify-center bg-[#252525] rounded-full cursor-pointer">
+                <i class="ri-search-line text-gray-400"></i>
+            </div>
+            <div class="w-8 h-8 flex items-center justify-center relative cursor-pointer">
+                <img src="https://public.readdy.ai/ai/img_res/ed50c60e5c291fe525028462e0f93ab8.jpg" class="w-8 h-8 rounded-full object-cover" alt="Profile">
+                <div class="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+                    <span class="text-[10px]">3</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16 pb-20 px-4">
+        <!-- Recently Viewed -->
+        <div class="mt-4 mb-6">
+            <div class="overflow-x-auto whitespace-nowrap pb-2 scrollbar-hide">
+                <div class="inline-flex space-x-2">
+                    <div class="bg-[#252525] p-1 rounded-lg">
+                        <img src="https://public.readdy.ai/ai/img_res/6cad4cf70c1abddf7b83f54d7def92bf.jpg" class="w-16 h-16 rounded object-cover" alt="RPG">
+                    </div>
+                    <div class="bg-[#252525] p-1 rounded-lg">
+                        <img src="https://public.readdy.ai/ai/img_res/1eac0c1a66e31ccb83335079ba382a08.jpg" class="w-16 h-16 rounded object-cover" alt="FPS">
+                    </div>
+                    <div class="bg-[#252525] p-1 rounded-lg">
+                        <img src="https://public.readdy.ai/ai/img_res/eb94b192554f806a1d61a8e21a46ab02.jpg" class="w-16 h-16 rounded object-cover" alt="MOBA">
+                    </div>
+                    <div class="bg-[#252525] p-1 rounded-lg">
+                        <img src="https://public.readdy.ai/ai/img_res/e7a9b7c403e9b63a1442c381162bdc80.jpg" class="w-16 h-16 rounded object-cover" alt="Survival">
+                    </div>
+                    <div class="bg-[#252525] p-1 rounded-lg">
+                        <img src="https://public.readdy.ai/ai/img_res/897073b10b4780483b0ed14b65f16e6a.jpg" class="w-16 h-16 rounded object-cover" alt="Adventure">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex space-x-8 mb-6">
+            <div class="tab-active text-xl font-semibold cursor-pointer">Discover</div>
+            <div class="text-xl font-semibold text-gray-400 cursor-pointer">Share</div>
+        </div>
+
+        <!-- Featured Content -->
+        <div class="mb-6">
+            <div class="relative rounded-lg overflow-hidden mb-6">
+                <img src="https://public.readdy.ai/ai/img_res/637753a09129f1cb239cf3fddfd19a60.jpg" class="w-full h-48 object-cover" alt="Featured Game">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-4">
+                    <div class="flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded-full mr-2">Guide</span>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 rounded-full overflow-hidden mr-1">
+                                <img src="https://public.readdy.ai/ai/img_res/2168509e8f74b4a36f660fd044ed39fb.jpg" class="w-full h-full object-cover" alt="Creator">
+                            </div>
+                            <span class="text-xs text-gray-300">NightHunter</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1">Elden Ring: Complete Boss Guide</h3>
+                    <p class="text-sm text-gray-300 mb-2">Master all boss fights with these proven strategies</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <div class="flex items-center">
+                                <i class="ri-eye-line mr-1 text-gray-400"></i>
+                                <span class="text-xs text-gray-400">24.5K</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-heart-line mr-1 text-gray-400"></i>
+                                <span class="text-xs text-gray-400">5.2K</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="w-8 h-8 flex items-center justify-center bg-[#252525] rounded-full cursor-pointer">
+                                <i class="ri-bookmark-line text-gray-400"></i>
+                            </button>
+                            <button class="w-8 h-8 flex items-center justify-center bg-[#252525] rounded-full cursor-pointer">
+                                <i class="ri-share-line text-gray-400"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative rounded-lg overflow-hidden">
+                <img src="https://public.readdy.ai/ai/img_res/0ba24ae091bf678718fedab22f8c6ab3.jpg" class="w-full h-48 object-cover" alt="Featured Game">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-4">
+                    <div class="flex items-center mb-1">
+                        <span class="bg-secondary text-white text-xs px-2 py-1 rounded-full mr-2">Tips</span>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 rounded-full overflow-hidden mr-1">
+                                <img src="https://public.readdy.ai/ai/img_res/77b39676eaed1f7cac601acf2ce5ce3a.jpg" class="w-full h-full object-cover" alt="Creator">
+                            </div>
+                            <span class="text-xs text-gray-300">CyberQueen</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1">Cyberpunk 2077: Hidden Secrets</h3>
+                    <p class="text-sm text-gray-300 mb-2">10 secrets you probably missed in Night City</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <div class="flex items-center">
+                                <i class="ri-eye-line mr-1 text-gray-400"></i>
+                                <span class="text-xs text-gray-400">18.7K</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-heart-line mr-1 text-gray-400"></i>
+                                <span class="text-xs text-gray-400">3.9K</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="w-8 h-8 flex items-center justify-center bg-[#252525] rounded-full cursor-pointer">
+                                <i class="ri-bookmark-line text-gray-400"></i>
+                            </button>
+                            <button class="w-8 h-8 flex items-center justify-center bg-[#252525] rounded-full cursor-pointer">
+                                <i class="ri-share-line text-gray-400"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Creators -->
+        <div class="mb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-bold">Popular Creators</h2>
+                <span class="text-sm text-primary cursor-pointer">View all</span>
+            </div>
+            <div class="grid grid-cols-4 gap-2">
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full overflow-hidden mb-1 ring-2 ring-primary p-[2px]">
+                        <img src="https://public.readdy.ai/ai/img_res/d7ff593c566d5c6478a6bbd89ed95249.jpg" class="w-full h-full rounded-full object-cover" alt="Creator">
+                    </div>
+                    <span class="text-xs text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis w-full">ProGamer</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full overflow-hidden mb-1 ring-2 ring-primary p-[2px]">
+                        <img src="https://public.readdy.ai/ai/img_res/ae108ae7152aa9f05daa031acd65d2db.jpg" class="w-full h-full rounded-full object-cover" alt="Creator">
+                    </div>
+                    <span class="text-xs text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis w-full">GamerGirl</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full overflow-hidden mb-1 ring-2 ring-primary p-[2px]">
+                        <img src="https://public.readdy.ai/ai/img_res/14e12e2bf5720856c883b71f76d6c8a9.jpg" class="w-full h-full rounded-full object-cover" alt="Creator">
+                    </div>
+                    <span class="text-xs text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis w-full">StrategyKing</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full overflow-hidden mb-1 ring-2 ring-primary p-[2px]">
+                        <img src="https://public.readdy.ai/ai/img_res/e6c116d29027660597c842d1ae97de9b.jpg" class="w-full h-full rounded-full object-cover" alt="Creator">
+                    </div>
+                    <span class="text-xs text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis w-full">SpeedRunner</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latest Guides -->
+        <div class="mb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-bold">Latest Guides</h2>
+                <span class="text-sm text-primary cursor-pointer">View all</span>
+            </div>
+            <div class="space-y-4">
+                <div class="flex bg-[#1A1A1A] rounded-lg overflow-hidden">
+                    <div class="w-24 h-24">
+                        <img src="https://public.readdy.ai/ai/img_res/645696039525319ac7b4dcd6c2f97f75.jpg" class="w-full h-full object-cover" alt="Guide">
+                    </div>
+                    <div class="flex-1 p-3">
+                        <div class="flex items-center mb-1">
+                            <span class="bg-primary text-white text-xs px-2 py-0.5 rounded-full mr-2">Walkthrough</span>
+                        </div>
+                        <h3 class="text-sm font-semibold mb-1">Baldur's Gate 3: Act 1 Complete Guide</h3>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 rounded-full overflow-hidden mr-1">
+                                    <img src="https://public.readdy.ai/ai/img_res/e6f4806c96ecc104a798ecc4e347bb89.jpg" class="w-full h-full object-cover" alt="Creator">
+                                </div>
+                                <span class="text-xs text-gray-400">DungeonMaster</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-eye-line mr-1 text-gray-400 text-xs"></i>
+                                <span class="text-xs text-gray-400">12.3K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex bg-[#1A1A1A] rounded-lg overflow-hidden">
+                    <div class="w-24 h-24">
+                        <img src="https://public.readdy.ai/ai/img_res/cdbf45a1c7c053e498e935c58cb605cc.jpg" class="w-full h-full object-cover" alt="Guide">
+                    </div>
+                    <div class="flex-1 p-3">
+                        <div class="flex items-center mb-1">
+                            <span class="bg-secondary text-white text-xs px-2 py-0.5 rounded-full mr-2">Tips</span>
+                        </div>
+                        <h3 class="text-sm font-semibold mb-1">Forza Horizon 5: Drift Mastery</h3>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 rounded-full overflow-hidden mr-1">
+                                    <img src="https://public.readdy.ai/ai/img_res/1af0f02cb56050ad937e16277db13388.jpg" class="w-full h-full object-cover" alt="Creator">
+                                </div>
+                                <span class="text-xs text-gray-400">SpeedDemon</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-eye-line mr-1 text-gray-400 text-xs"></i>
+                                <span class="text-xs text-gray-400">8.7K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex bg-[#1A1A1A] rounded-lg overflow-hidden">
+                    <div class="w-24 h-24">
+                        <img src="https://public.readdy.ai/ai/img_res/384224ae310f9b95512e3df3ab603e2a.jpg" class="w-full h-full object-cover" alt="Guide">
+                    </div>
+                    <div class="flex-1 p-3">
+                        <div class="flex items-center mb-1">
+                            <span class="bg-primary text-white text-xs px-2 py-0.5 rounded-full mr-2">Strategy</span>
+                        </div>
+                        <h3 class="text-sm font-semibold mb-1">Age of Empires 4: Early Rush Tactics</h3>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 rounded-full overflow-hidden mr-1">
+                                    <img src="https://public.readdy.ai/ai/img_res/57b5add20274cf7d1ce31dfe07669be6.jpg" class="w-full h-full object-cover" alt="Creator">
+                                </div>
+                                <span class="text-xs text-gray-400">WarQueen</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-eye-line mr-1 text-gray-400 text-xs"></i>
+                                <span class="text-xs text-gray-400">15.1K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trending Topics -->
+        <div>
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-bold">Trending Topics</h2>
+                <span class="text-sm text-primary cursor-pointer">View all</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-[#252525] text-gray-300 text-sm px-3 py-1.5 rounded-full">#EldenRing</span>
+                <span class="bg-[#252525] text-gray-300 text-sm px-3 py-1.5 rounded-full">#Baldur'sGate3</span>
+                <span class="bg-[#252525] text-gray-300 text-sm px-3 py-1.5 rounded-full">#Starfield</span>
+                <span class="bg-[#252525] text-gray-300 text-sm px-3 py-1.5 rounded-full">#Cyberpunk2077</span>
+                <span class="bg-[#252525] text-gray-300 text-sm px-3 py-1.5 rounded-full">#CallOfDuty</span>
+                <span class="bg-[#252525] text-gray-300 text-sm px-3 py-1.5 rounded-full">#Fortnite</span>
+                <span class="bg-[#252525] text-gray-300 text-sm px-3 py-1.5 rounded-full">#GTA6</span>
+                <span class="bg-[#252525] text-gray-300 text-sm px-3 py-1.5 rounded-full">#LeagueOfLegends</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Tab Bar -->
+    <div class="fixed bottom-0 w-full bg-[#1A1A1A] border-t border-[#333333] z-50">
+        <div class="grid grid-cols-5 h-16">
+            <div class="flex flex-col items-center justify-center cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-home-5-fill text-primary"></i>
+                </div>
+                <span class="text-[10px] mt-1 text-primary">Home</span>
+            </div>
+            <div class="flex flex-col items-center justify-center cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-compass-line text-gray-400"></i>
+                </div>
+                <span class="text-[10px] mt-1 text-gray-400">Explore</span>
+            </div>
+            <div class="flex flex-col items-center justify-center relative cursor-pointer">
+                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center absolute -top-6">
+                    <i class="ri-add-line text-white text-xl"></i>
+                </div>
+                <span class="text-[10px] mt-8 text-gray-400">Create</span>
+            </div>
+            <div class="flex flex-col items-center justify-center cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-notification-line text-gray-400"></i>
+                </div>
+                <span class="text-[10px] mt-1 text-gray-400">Alerts</span>
+            </div>
+            <div class="flex flex-col items-center justify-center cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-user-line text-gray-400"></i>
+                </div>
+                <span class="text-[10px] mt-1 text-gray-400">Profile</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Handle tab switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-active, .text-gray-400');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => {
+                        t.classList.remove('tab-active');
+                        t.classList.add('text-gray-400');
+                    });
+                    this.classList.add('tab-active');
+                    this.classList.remove('text-gray-400');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
